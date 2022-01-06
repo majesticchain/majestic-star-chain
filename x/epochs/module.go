@@ -20,10 +20,10 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 
-	"github.com/tharsis/evmos/x/epochs/client/cli"
-	"github.com/tharsis/evmos/x/epochs/keeper"
-	"github.com/tharsis/evmos/x/epochs/simulation"
-	"github.com/tharsis/evmos/x/epochs/types"
+	"github.com/majesticchain/majestic-star-chain/x/epochs/client/cli"
+	"github.com/majesticchain/majestic-star-chain/x/epochs/keeper"
+	"github.com/majesticchain/majestic-star-chain/x/epochs/simulation"
+	"github.com/majesticchain/majestic-star-chain/x/epochs/types"
 )
 
 var (

@@ -10,8 +10,8 @@ import (
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 	feemarkettypes "github.com/tharsis/ethermint/x/feemarket/types"
 
-	"github.com/tharsis/evmos/app"
-	"github.com/tharsis/evmos/x/epochs/types"
+	"github.com/majesticchain/majestic-star-chain/app"
+	"github.com/majesticchain/majestic-star-chain/x/epochs/types"
 )
 
 type KeeperTestSuite struct {

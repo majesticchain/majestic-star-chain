@@ -7,19 +7,19 @@ import (
 	"contrib.go.opencensus.io/exporter/prometheus"
 	"go.opencensus.io/stats/view"
 
-	"github.com/tharsis/evmos/app"
+	"github.com/majesticchain/majestic-star-chain/app"
 )
 
 func EnableObservability() error {
 	if true {
 		// Temporarily disabling this until we can configure out port reuse
 		// fast enough or enabling observability through the config.
-		// Please see https://github.com/tharsis/evmos/issues/84
+		// Please see https://github.com/majesticchain/majestic-star-chain/issues/84
 		return nil
 	}
 
 	pe, err := prometheus.NewExporter(prometheus.Options{
-		Namespace: "evmosd",
+		Namespace: "mjtd",
 	})
 	if err != nil {
 		return fmt.Errorf("cmd/config: failed to create the OpenCensus Prometheus exporter: %w", err)

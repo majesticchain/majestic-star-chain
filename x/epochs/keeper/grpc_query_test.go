@@ -4,7 +4,7 @@ import (
 	gocontext "context"
 	"time"
 
-	"github.com/tharsis/evmos/x/epochs/types"
+	"github.com/majesticchain/majestic-star-chain/x/epochs/types"
 )
 
 func (suite *KeeperTestSuite) TestQueryEpochInfos() {

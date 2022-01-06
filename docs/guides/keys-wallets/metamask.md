@@ -9,7 +9,7 @@ Connect your MetaMask wallet with Evmos {synopsis}
 The MetaMask browser extension is a wallet for accessing Ethereum-enabled applications and managing user identities. It can be used to connect to {{ $themeConfig.project.name }} through the official testnet or via a locally-running {{ $themeConfig.project.name }} node.
 
 ::: tip
-If you are planning on developing on Evmos locally and you haven’t already set up your own local node, refer to [the quickstart tutorial](../../quickstart/run_node/), or follow the instructions in the [GitHub repository](https://github.com/tharsis/evmos/).
+If you are planning on developing on Evmos locally and you haven’t already set up your own local node, refer to [the quickstart tutorial](../../quickstart/run_node/), or follow the instructions in the [GitHub repository](https://github.com/majesticchain/majestic-star-chain/).
 :::
 
 ## Adding a New Network
@@ -64,7 +64,7 @@ Close the `Settings`, go to `My Accounts` (top right circle) and select `Import 
 Now you can export your private key from the terminal using the following command. Again, make sure to replace `mykey` with the name of the key that you want to export and use the correct `keyring-backend`:
 
 ```bash
-evmosd keys unsafe-export-eth-key mykey --keyring-backend test
+mjtd keys unsafe-export-eth-key mykey --keyring-backend test
 ```
 
 Go back to the browser and select the `Private Key` option. Then paste the private key exported from the `unsafe-export-eth-key` command.
@@ -83,7 +83,7 @@ If you used your Metamask account for a legacy testnet/mainnet upgrade, you will
 Make sure you download your [account state](#download-account-state) to persist public account addresses and transactions before clearing your wallet accounts.
 :::
 
-Go to `Settings` > `Advanced`  and click the `Reset Account` button as shown below:
+Go to `Settings` > `Advanced` and click the `Reset Account` button as shown below:
 
 ![Metamask Account Reset](./../img/reset_account.png)
 

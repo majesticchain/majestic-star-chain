@@ -5,8 +5,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/tharsis/evmos/x/epochs/keeper"
-	"github.com/tharsis/evmos/x/epochs/types"
+	"github.com/majesticchain/majestic-star-chain/x/epochs/keeper"
+	"github.com/majesticchain/majestic-star-chain/x/epochs/types"
 )
 
 // InitGenesis initializes the capability module's state from a provided genesis

@@ -10,12 +10,12 @@ This document outlines the steps to join an existing testnet {synopsis}
 
 You specify the network you want to join by setting the **genesis file** and **seeds**. If you need more information about past networks, check our [testnets repo](https://github.com/tharsis/testnets).
 
-| Network Chain ID | Description                       | Site                                                                     | Version                                               |
-|------------------|-----------------------------------|--------------------------------------------------------------------------|-------------------------------------------------------|
-| `evmos_9000-2`   | Olympus Mons Incentivized Testnet | [Olympus Mons](https://github.com/tharsis/testnets/tree/main/arsia_mons) | [`v0.3.x`](https://github.com/tharsis/evmos/releases) |
-| `evmos_9000-1`   | Arsia Mons Testnet                | [Arsia Mons](https://github.com/tharsis/testnets/tree/main/arsia_mons)   | [`v0.1.x`](https://github.com/tharsis/evmos/releases) |
+| Network Chain ID | Description                       | Site                                                                     | Version                                                                   |
+| ---------------- | --------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| `evmos_9000-2`   | Olympus Mons Incentivized Testnet | [Olympus Mons](https://github.com/tharsis/testnets/tree/main/arsia_mons) | [`v0.3.x`](https://github.com/majesticchain/majestic-star-chain/releases) |
+| `evmos_9000-1`   | Arsia Mons Testnet                | [Arsia Mons](https://github.com/tharsis/testnets/tree/main/arsia_mons)   | [`v0.1.x`](https://github.com/majesticchain/majestic-star-chain/releases) |
 
-## Install `evmosd`
+## Install `mjtd`
 
 Follow the [installation](./../quickstart/installation) document to install the {{ $themeConfig.project.name }} binary `{{ $themeConfig.project.binary }}`.
 
@@ -32,7 +32,7 @@ See the Official [Chain IDs](./../basics/chain_id.md#official-chain-ids) for ref
 :::
 
 ```bash
-evmosd config chain-id evmos_9000-2
+mjtd config chain-id evmos_9000-2
 ```
 
 ## Initialize Node
@@ -40,37 +40,37 @@ evmosd config chain-id evmos_9000-2
 We need to initialize the node to create all the necessary validator and node configuration files:
 
 ```bash
-evmosd init <your_custom_moniker> --chain-id evmos_9000-2
+mjtd init <your_custom_moniker> --chain-id evmos_9000-2
 ```
 
 ::: danger
 Monikers can contain only ASCII characters. Using Unicode characters will render your node unreachable.
 :::
 
-By default, the `init` command creates your `~/.evmosd` (i.e `$HOME`) directory with subfolders `config/` and `data/`.
+By default, the `init` command creates your `~/.mjtd` (i.e `$HOME`) directory with subfolders `config/` and `data/`.
 In the `config` directory, the most important files for configuration are `app.toml` and `config.toml`.
 
 ## Genesis & Seeds
 
 ### Copy the Genesis File
 
-Check the `genesis.json` file from the [`testnets`](https://github.com/tharsis/testnets) repository and copy it over to the `config` directory: `~/.evmosd/config/genesis.json`. This is a genesis file with the chain-id and genesis accounts balances.
+Check the `genesis.json` file from the [`testnets`](https://github.com/tharsis/testnets) repository and copy it over to the `config` directory: `~/.mjtd/config/genesis.json`. This is a genesis file with the chain-id and genesis accounts balances.
 
 ```bash
-curl https://raw.githubusercontent.com/tharsis/testnets/main/olympus_mons/genesis.json > ~/.evmosd/config/genesis.json
+curl https://raw.githubusercontent.com/tharsis/testnets/main/olympus_mons/genesis.json > ~/.mjtd/config/genesis.json
 ```
 
 Then verify the correctness of the genesis configuration file:
 
 ```bash
-evmosd validate-genesis
+mjtd validate-genesis
 ```
 
 ### Add Seed Nodes
 
-Your node needs to know how to find [peers](https://docs.tendermint.com/master/tendermint-core/using-tendermint.html#peers). You'll need to add healthy [seed nodes](https://docs.tendermint.com/master/tendermint-core/using-tendermint.html#seed) to `$HOME/.evmosd/config/config.toml`. The [`testnets`](https://github.com/tharsis/testnets) repo contains links to some seed nodes.
+Your node needs to know how to find [peers](https://docs.tendermint.com/master/tendermint-core/using-tendermint.html#peers). You'll need to add healthy [seed nodes](https://docs.tendermint.com/master/tendermint-core/using-tendermint.html#seed) to `$HOME/.mjtd/config/config.toml`. The [`testnets`](https://github.com/tharsis/testnets) repo contains links to some seed nodes.
 
-Edit the file located in `~/.evmosd/config/config.toml` and the `seeds` to the following:
+Edit the file located in `~/.mjtd/config/config.toml` and the `seeds` to the following:
 
 ```toml
 #######################################################
@@ -88,7 +88,7 @@ You can use the following code to get seeds from the repo and add it to your con
 
 ```bash
 SEEDS=`curl -sL https://raw.githubusercontent.com/tharsis/testnets/main/olympus_mons/seeds.txt | awk '{print $1}' | paste -s -d, -`
-sed -i.bak -e "s/^seeds =.*/seeds = \"$SEEDS\"/" ~/.evmosd/config/config.toml
+sed -i.bak -e "s/^seeds =.*/seeds = \"$SEEDS\"/" ~/.mjtd/config/config.toml
 ```
 
 :::tip
@@ -97,7 +97,7 @@ For more information on seeds and peers, you can the Tendermint [P2P documentati
 
 ### Add Persistent Peers
 
-We can set the [`persistent_peers`](https://docs.tendermint.com/master/tendermint-core/using-tendermint.html#persistent-peer) field in `~/.evmosd/config/config.toml` to specify peers that your node will maintain persistent connections with. You can retrieve them from the list of
+We can set the [`persistent_peers`](https://docs.tendermint.com/master/tendermint-core/using-tendermint.html#persistent-peer) field in `~/.mjtd/config/config.toml` to specify peers that your node will maintain persistent connections with. You can retrieve them from the list of
 available peers on the [`testnets`](https://github.com/tharsis/testnets) repo.
 
 A list of available persistent peers is also available in the `#find-peers` channel in the [Evmos Discord](https://discord.gg/trje9XuAmy). You can get a random 10 entries from the `peers.txt` file in the `PEERS` variable by running the following command:
@@ -109,7 +109,7 @@ PEERS=`curl -sL https://raw.githubusercontent.com/tharsis/testnets/main/olympus_
 Use `sed` to include them into the configuration. You can also add them manually:
 
 ```bash
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" ~/.evmosd/config/config.toml
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" ~/.mjtd/config/config.toml
 ```
 
 ## Run a Testnet Validator
@@ -121,9 +121,9 @@ For more details on how to configure your validator, follow the validator [setup
 :::
 
 ```bash
-evmosd tx staking create-validator \
+mjtd tx staking create-validator \
   --amount=1000000000000aphoton \
-  --pubkey=$(evmosd tendermint show-validator) \
+  --pubkey=$(mjtd tendermint show-validator) \
   --moniker="EvmosWhale" \
   --chain-id=<chain_id> \
   --commission-rate="0.10" \
@@ -140,7 +140,7 @@ evmosd tx staking create-validator \
 The final step is to [start the nodes](./../quickstart/run_node#start-node). Once enough voting power (+2/3) from the genesis validators is up-and-running, the testnet will start producing blocks.
 
 ```bash
-evmosd start
+mjtd start
 ```
 
 ## Upgrading Your Node
@@ -156,8 +156,8 @@ If the version <new_version> you are upgrading to is not breaking from the previ
 First, remove the outdated files and reset the data.
 
 ```bash
-rm $HOME/.evmosd/config/addrbook.json $HOME/.evmosd/config/genesis.json
-evmosd unsafe-reset-all
+rm $HOME/.mjtd/config/addrbook.json $HOME/.mjtd/config/genesis.json
+mjtd unsafe-reset-all
 ```
 
 Your node is now in a pristine state while keeping the original `priv_validator.json` and `config.toml`. If you had any sentry nodes or full nodes setup before,
@@ -173,7 +173,7 @@ Make sure that every node has a unique `priv_validator.json`. Do not copy the `p
 To restart your node, just type:
 
 ```bash
-evmosd start
+mjtd start
 ```
 
 ## Share your Peer
@@ -184,7 +184,7 @@ You can share your peer to posting it in the `#find-peers` channel in the [Evmos
 To get your Node ID use
 
 ```bash
-evmosd tendermint show-node-id
+mjtd tendermint show-node-id
 ```
 
 :::

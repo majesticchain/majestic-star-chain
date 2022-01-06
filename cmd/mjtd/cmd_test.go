@@ -9,12 +9,12 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
 	"github.com/stretchr/testify/require"
 
-	"github.com/tharsis/evmos/app"
-	evmosd "github.com/tharsis/evmos/cmd/evmosd"
+	"github.com/majesticchain/majestic-star-chain/app"
+	mjtd "github.com/majesticchain/majestic-star-chain/cmd/mjtd"
 )
 
 func TestInitCmd(t *testing.T) {
-	rootCmd, _ := evmosd.NewRootCmd()
+	rootCmd, _ := mjtd.NewRootCmd()
 	rootCmd.SetArgs([]string{
 		"init",       // Test the init cmd
 		"evmos-test", // Moniker

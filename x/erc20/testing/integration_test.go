@@ -16,8 +16,8 @@ import (
 	"github.com/tharsis/ethermint/server/config"
 	"github.com/tharsis/ethermint/testutil/network"
 
-	evmosnetwork "github.com/tharsis/evmos/testutil/network"
-	"github.com/tharsis/evmos/x/erc20/types"
+	evmosnetwork "github.com/majesticchain/majestic-star-chain/testutil/network"
+	"github.com/majesticchain/majestic-star-chain/x/erc20/types"
 )
 
 // var _ = Describe("E2e", func() {

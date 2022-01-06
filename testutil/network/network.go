@@ -15,7 +15,7 @@ import (
 	"github.com/tharsis/ethermint/encoding"
 	"github.com/tharsis/ethermint/testutil/network"
 
-	"github.com/tharsis/evmos/app"
+	"github.com/majesticchain/majestic-star-chain/app"
 )
 
 // DefaultConfig returns a sane default configuration suitable for nearly all

@@ -11,8 +11,8 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	evmtypes "github.com/tharsis/ethermint/x/evm/types"
 
-	"github.com/tharsis/evmos/x/erc20/types"
-	"github.com/tharsis/evmos/x/erc20/types/contracts"
+	"github.com/majesticchain/majestic-star-chain/x/erc20/types"
+	"github.com/majesticchain/majestic-star-chain/x/erc20/types/contracts"
 )
 
 var _ types.MsgServer = &Keeper{}

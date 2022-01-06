@@ -14,7 +14,7 @@ Check the JSON-RPC methods supported on Evmos. {synopsis}
 ## Endpoints
 
 | Method                                                                            | Namespace | Implemented | Public | Notes              |
-|-----------------------------------------------------------------------------------|-----------|-------------|--------|--------------------|
+| --------------------------------------------------------------------------------- | --------- | ----------- | ------ | ------------------ |
 | [`web3_clientVersion`](#web3-clientversion)                                       | Web3      | ✔           | ✔      |                    |
 | [`web3_sha3`](#web3-sha3)                                                         | Web3      | ✔           | ✔      |                    |
 | [`net_version`](#net-version)                                                     | Net       | ✔           | ✔      |                    |
@@ -57,9 +57,9 @@ Check the JSON-RPC methods supported on Evmos. {synopsis}
 | `eth_compileSolidity`                                                             | Eth       |             |        |                    |
 | `eth_compileSerpent`                                                              | Eth       |             |        |                    |
 | `eth_signTransaction`                                                             | Eth       |             |        |                    |
-| `eth_mining`                                                                      | Eth       |             | ❌      |                    |
+| `eth_mining`                                                                      | Eth       |             | ❌     |                    |
 | [`eth_coinbase`](#eth-coinbase)                                                   | Eth       | ✔           |        |                    |
-| `eth_hashrate`                                                                    | Eth       | N/A         | ❌      | PoW-only           |
+| `eth_hashrate`                                                                    | Eth       | N/A         | ❌     | PoW-only           |
 | `eth_getUncleCountByBlockHash`                                                    | Eth       | N/A         |        | PoW-only           |
 | `eth_getUncleCountByBlockNumber`                                                  | Eth       | N/A         |        | PoW-only           |
 | `eth_getUncleByBlockHashAndIndex`                                                 | Eth       | N/A         |        | PoW-only           |
@@ -67,16 +67,16 @@ Check the JSON-RPC methods supported on Evmos. {synopsis}
 | [`eth_getProof`](#eth-getProof)                                                   | Eth       | ✔           |        |                    |
 | [`eth_subscribe`](#eth-subscribe)                                                 | Websocket | ✔           |        |                    |
 | [`eth_unsubscribe`](#eth-unsubscribe)                                             | Websocket | ✔           |        |                    |
-| [`personal_importRawKey`](#personal-importrawkey)                                 | Personal  | ✔           | ❌      |                    |
-| [`personal_listAccounts`](#personal-listaccounts)                                 | Personal  | ✔           | ❌      |                    |
-| [`personal_lockAccount`](#personal-lockaccount)                                   | Personal  | ✔           | ❌      |                    |
-| [`personal_newAccount`](#personal-newaccount)                                     | Personal  | ✔           | ❌      |                    |
-| [`personal_unlockAccount`](#personal-unlockaccount)                               | Personal  | ✔           | ❌      |                    |
-| [`personal_sendTransaction`](#personal-sendtransaction)                           | Personal  | ✔           | ❌      |                    |
-| [`personal_sign`](#personal-sign)                                                 | Personal  | ✔           | ❌      |                    |
-| [`personal_ecRecover`](#personal-ecrecover)                                       | Personal  | ✔           | ❌      |                    |
-| [`personal_initializeWallet`](#personal_initializewallet)                                       | Personal  | ✔           | ❌      ||
-| [`personal_unpair`](#personal_unpair)                                       | Personal  | ✔           | ❌      |                    |
+| [`personal_importRawKey`](#personal-importrawkey)                                 | Personal  | ✔           | ❌     |                    |
+| [`personal_listAccounts`](#personal-listaccounts)                                 | Personal  | ✔           | ❌     |                    |
+| [`personal_lockAccount`](#personal-lockaccount)                                   | Personal  | ✔           | ❌     |                    |
+| [`personal_newAccount`](#personal-newaccount)                                     | Personal  | ✔           | ❌     |                    |
+| [`personal_unlockAccount`](#personal-unlockaccount)                               | Personal  | ✔           | ❌     |                    |
+| [`personal_sendTransaction`](#personal-sendtransaction)                           | Personal  | ✔           | ❌     |                    |
+| [`personal_sign`](#personal-sign)                                                 | Personal  | ✔           | ❌     |                    |
+| [`personal_ecRecover`](#personal-ecrecover)                                       | Personal  | ✔           | ❌     |                    |
+| [`personal_initializeWallet`](#personal_initializewallet)                         | Personal  | ✔           | ❌     |                    |
+| [`personal_unpair`](#personal_unpair)                                             | Personal  | ✔           | ❌     |                    |
 | `db_putString`                                                                    | DB        |             |        |                    |
 | `db_getString`                                                                    | DB        |             |        |                    |
 | `db_putHex`                                                                       | DB        |             |        |                    |
@@ -91,14 +91,14 @@ Check the JSON-RPC methods supported on Evmos. {synopsis}
 | `shh_uninstallFilter`                                                             | SSH       |             |        |                    |
 | `shh_getFilterChanges`                                                            | SSH       |             |        |                    |
 | `shh_getMessages`                                                                 | SSH       |             |        |                    |
-| `admin_addPeer`                                                                   | Admin     |             | ❌      |                    |
-| `admin_datadir`                                                                   | Admin     |             | ❌      |                    |
-| `admin_nodeInfo`                                                                  | Admin     |             | ❌      |                    |
-| `admin_peers`                                                                     | Admin     |             | ❌      |                    |
-| `admin_startRPC`                                                                  | Admin     |             | ❌      |                    |
-| `admin_startWS`                                                                   | Admin     |             | ❌      |                    |
-| `admin_stopRPC`                                                                   | Admin     |             | ❌      |                    |
-| `admin_stopWS`                                                                    | Admin     |             | ❌      |                    |
+| `admin_addPeer`                                                                   | Admin     |             | ❌     |                    |
+| `admin_datadir`                                                                   | Admin     |             | ❌     |                    |
+| `admin_nodeInfo`                                                                  | Admin     |             | ❌     |                    |
+| `admin_peers`                                                                     | Admin     |             | ❌     |                    |
+| `admin_startRPC`                                                                  | Admin     |             | ❌     |                    |
+| `admin_startWS`                                                                   | Admin     |             | ❌     |                    |
+| `admin_stopRPC`                                                                   | Admin     |             | ❌     |                    |
+| `admin_stopWS`                                                                    | Admin     |             | ❌     |                    |
 | `clique_getSnapshot`                                                              | Clique    |             |        |                    |
 | `clique_getSnapshotAtHash`                                                        | Clique    |             |        |                    |
 | `clique_getSigners`                                                               | Clique    |             |        |                    |
@@ -126,13 +126,13 @@ Check the JSON-RPC methods supported on Evmos. {synopsis}
 | `debug_startGoTrace`                                                              | Debug     | ✔           |        |                    |
 | `debug_stopCPUProfile`                                                            | Debug     | ✔           |        |                    |
 | `debug_stopGoTrace`                                                               | Debug     | ✔           |        |                    |
-| [`debug_traceBlock`](#debug-traceblock)                                                                | Debug     | ✔           |        |                    |
-| [`debug_traceBlockByNumber`](#debug-traceblockbynumber)                                                        | Debug     | ✔ |        |                    |
-| [`debug_traceBlockByHash`](#debug-traceblockbyhash)                                                          | Debug     | ✔ |        |                    |
+| [`debug_traceBlock`](#debug-traceblock)                                           | Debug     | ✔           |        |                    |
+| [`debug_traceBlockByNumber`](#debug-traceblockbynumber)                           | Debug     | ✔           |        |                    |
+| [`debug_traceBlockByHash`](#debug-traceblockbyhash)                               | Debug     | ✔           |        |                    |
 | `debug_traceBlockFromFile`                                                        | Debug     |             |        |                    |
 | `debug_standardTraceBlockToFile`                                                  | Debug     |             |        |                    |
 | `debug_standardTraceBadBlockToFile`                                               | Debug     |             |        |                    |
-| [`debug_traceTransaction`](#debug-tracetransaction)                                                          | Debug     | ✔           |        |                    |
+| [`debug_traceTransaction`](#debug-tracetransaction)                               | Debug     | ✔           |        |                    |
 | `debug_verbosity`                                                                 | Debug     |             |        |                    |
 | `debug_vmodule`                                                                   | Debug     |             |        |                    |
 | `debug_writeBlockProfile`                                                         | Debug     | ✔           |        |                    |
@@ -147,19 +147,19 @@ Check the JSON-RPC methods supported on Evmos. {synopsis}
 | `les_latestCheckpoint`                                                            | Les       |             |        |                    |
 | `les_getCheckpoint`                                                               | Les       |             |        |                    |
 | `les_getCheckpointContractAddress`                                                | Les       |             |        |                    |
-| [`miner_getHashrate`](#miner-gethashrate)                                         | Miner     | ✔           | ❌      | No-op              |
-| [`miner_setExtra`](#miner-setextra)                                               | Miner     | ✔           | ❌      | No-op              |
-| [`miner_setGasPrice`](#miner-setgasprice)                                         | Miner     | ✔           | ❌      | Needs node restart |
-| [`miner_start`](#miner-start)                                                     | Miner     | ✔           | ❌      | No-op              |
-| [`miner_stop`](#miner-stop)                                                       | Miner     | ✔           | ❌      | No-op              |
-| [`miner_setGasLimit`](#miner-setgaslimit)                                         | Miner     | ✔           | ❌      | No-op              |
-| [`miner_setEtherbase`](#miner-setetherbase)                                       | Miner     | ✔           | ❌      |                    |
+| [`miner_getHashrate`](#miner-gethashrate)                                         | Miner     | ✔           | ❌     | No-op              |
+| [`miner_setExtra`](#miner-setextra)                                               | Miner     | ✔           | ❌     | No-op              |
+| [`miner_setGasPrice`](#miner-setgasprice)                                         | Miner     | ✔           | ❌     | Needs node restart |
+| [`miner_start`](#miner-start)                                                     | Miner     | ✔           | ❌     | No-op              |
+| [`miner_stop`](#miner-stop)                                                       | Miner     | ✔           | ❌     | No-op              |
+| [`miner_setGasLimit`](#miner-setgaslimit)                                         | Miner     | ✔           | ❌     | No-op              |
+| [`miner_setEtherbase`](#miner-setetherbase)                                       | Miner     | ✔           | ❌     |                    |
 | [`txpool_content`](#txpool-content)                                               | TxPool    | ✔           |        |                    |
 | [`txpool_inspect`](#txpool-inspect)                                               | TxPool    | ✔           |        |                    |
 | [`txpool_status`](#txpool-status)                                                 | TxPool    | ✔           |        |                    |
 
 :::tip
-Block Number can be entered as a Hex string, `"earliest"`, ``"latest"`` or `"pending"`.
+Block Number can be entered as a Hex string, `"earliest"`, `"latest"` or `"pending"`.
 :::
 
 Below is a list of the RPC methods, the parameters and an example response from the namespaces.
@@ -175,7 +175,7 @@ Get the web3 client version.
 #### Result
 
 ```json
- {"jsonrpc":"2.0","id":1,"result":"Evmos/0.1.3+/linux/go1.17"}
+{ "jsonrpc": "2.0", "id": 1, "result": "Evmos/0.1.3+/linux/go1.17" }
 ```
 
 #### Client Examples
@@ -214,10 +214,14 @@ Returns Keccak-256 (not the standardized SHA3-256) of the given data.
 
 - Required: ✓ Yes
 
-#### Result 
+#### Result
 
 ```json
-{"jsonrpc":"2.0","id":1,"result":"0x1b84adea42d5b7d192fd8a61a85b25abe0757e9a65cab1da470258914053823f"}
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x1b84adea42d5b7d192fd8a61a85b25abe0757e9a65cab1da470258914053823f"
+}
 ```
 
 #### Client Examples
@@ -374,7 +378,7 @@ Returns the storage address for a given account address.
 
 - Integer of the position in the storage
 
-- Block Number  or Block Hash ([EIP-1898](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1898.md))
+- Block Number or Block Hash ([EIP-1898](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1898.md))
 
 ```json
 // Request
@@ -442,7 +446,7 @@ Returns the code for a given account address and Block Number.
 
 - Account Address
 
-- Block Number  or Block Hash ([EIP-1898](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1898.md))
+- Block Number or Block Hash ([EIP-1898](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1898.md))
 
 ```json
 // Request
@@ -484,19 +488,19 @@ Sends transaction from given account to a given account.
 
 - Object containing:
 
-    `from`: `DATA`, 20 Bytes - The address the transaction is send from.
+  `from`: `DATA`, 20 Bytes - The address the transaction is send from.
 
-    `to`: `DATA`, 20 Bytes - (optional when creating new contract) The address the transaction is directed to.
+  `to`: `DATA`, 20 Bytes - (optional when creating new contract) The address the transaction is directed to.
 
-    `gas`: QUANTITY - (optional, default: 90000) Integer of the gas provided for the transaction execution. It will return unused gas.
+  `gas`: QUANTITY - (optional, default: 90000) Integer of the gas provided for the transaction execution. It will return unused gas.
 
-    `gasPrice`: QUANTITY - (optional, default: To-Be-Determined) Integer of the gasPrice used for each paid gas
+  `gasPrice`: QUANTITY - (optional, default: To-Be-Determined) Integer of the gasPrice used for each paid gas
 
-    `value`: QUANTITY - value sent with this transaction
+  `value`: QUANTITY - value sent with this transaction
 
-    `data`: `DATA` - The compiled code of a contract OR the hash of the invoked method signature and encoded parameters. For details see Ethereum Contract ABI
+  `data`: `DATA` - The compiled code of a contract OR the hash of the invoked method signature and encoded parameters. For details see Ethereum Contract ABI
 
-    `nonce`: QUANTITY - (optional) Integer of a nonce. This allows to overwrite your own pending transactions that use the same nonce.
+  `nonce`: QUANTITY - (optional) Integer of a nonce. This allows to overwrite your own pending transactions that use the same nonce.
 
 ```json
 // Request
@@ -531,19 +535,19 @@ Executes a new message call immediately without creating a transaction on the bl
 
 - Object containing:
 
-    `from`: `DATA`, 20 Bytes - (optional) The address the transaction is sent from.
+  `from`: `DATA`, 20 Bytes - (optional) The address the transaction is sent from.
 
-    `to`: `DATA`, 20 Bytes - The address the transaction is directed to.
+  `to`: `DATA`, 20 Bytes - The address the transaction is directed to.
 
-    `gas`: QUANTITY - gas provided for the transaction execution. eth_call consumes zero gas, but this parameter may be needed by some executions.
+  `gas`: QUANTITY - gas provided for the transaction execution. eth_call consumes zero gas, but this parameter may be needed by some executions.
 
-    `gasPrice`: QUANTITY - gasPrice used for each paid gas
+  `gasPrice`: QUANTITY - gasPrice used for each paid gas
 
-    `value`: QUANTITY - value sent with this transaction
+  `value`: QUANTITY - value sent with this transaction
 
-    `data`: `DATA` - (optional) Hash of the method signature and encoded parameters. For details see Ethereum Contract ABI in the Solidity documentation
+  `data`: `DATA` - (optional) Hash of the method signature and encoded parameters. For details see Ethereum Contract ABI in the Solidity documentation
 
-- Block number  or Block Hash ([EIP-1898](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1898.md))
+- Block number or Block Hash ([EIP-1898](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1898.md))
 
 ```json
 // Request
@@ -561,11 +565,11 @@ Returns an estimate value of the gas required to send the transaction.
 
 - Object containing:
 
-    `from`: `DATA`, 20 Bytes - The address the transaction is send from.
+  `from`: `DATA`, 20 Bytes - The address the transaction is send from.
 
-    `to`: `DATA`, 20 Bytes - (optional when creating new contract) The address the transaction is directed to.
+  `to`: `DATA`, 20 Bytes - (optional when creating new contract) The address the transaction is directed to.
 
-    `value`: `QUANTITY` - value sent with this transaction
+  `value`: `QUANTITY` - value sent with this transaction
 
 ```json
 // Request
@@ -597,7 +601,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":[
 
 Returns the block info given the hash found in the command above and a bool.
 
-#### Parameters 
+#### Parameters
 
 - Hash of a block.
 
@@ -622,7 +626,7 @@ Returns transaction details given the ethereum tx something.
 ```json
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","params":["0xec5fa15e1368d6ac314f9f64118c5794f076f63c02e66f97ea5fe1de761a8973"],"id":1}' -H "Content-Type: application/json" http://localhost:8545
- 
+
 // Result
 {"jsonrpc":"2.0","id":1,"result":{"blockHash":"0x7a7398cc11d9c4c8e6f53e0c73824297aceafdab62db9e4b867a0da694384864","blockNumber":"0x188","from":"0x3b7252d007059ffc82d16d022da3cbf9992d2f70","gas":"0x147ee","gasPrice":"0x3b9aca00","hash":"0xec5fa15e1368d6ac314f9f64118c5794f076f63c02e66f97ea5fe1de761a8973","input":"0x6dba746c","nonce":"0x18","to":"0xa655256f589060437e5ffe2246dec385d040f148","transactionIndex":"0x0","value":"0x0","v":"0xa96","r":"0x6db399d694a452fb4106419140a6e5dbbe6817743a0f6f695a651e6576e59a5e","s":"0x25dd6ab1f936d0280d2fed0caeb0ebe5b9a46de6d8cb08ad8fd2c88deb55fc31"}}
 ```
@@ -650,10 +654,10 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByBlockHashAnd
 Returns the receipt of a transaction by transaction hash.
 
 Note: Tx Code from Tendermint and the Ethereum receipt status are switched:
-|         | Tendermint | Ethereum |
+| | Tendermint | Ethereum |
 |---------|------------|----------|
-| Success | 0          | 1        |
-| Fail    | 1          | 0        |
+| Success | 0 | 1 |
+| Fail | 1 | 0 |
 
 #### Parameters
 
@@ -752,7 +756,7 @@ Returns an array of all logs matching filter with given id.
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getFilterLogs","params":["0x127e9eca4f7751fb4e5cb5291ad8b455"],"id":1}' -H "Content-Type: application/json" http://localhost:8545
 
 // Result
-{"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"filter 0x35b64c227ce30e84fc5c7bd347be380e doesn't have a LogsSubscription type: got 5"}} 
+{"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"filter 0x35b64c227ce30e84fc5c7bd347be380e doesn't have a LogsSubscription type: got 5"}}
 ```
 
 ### `eth_getLogs`
@@ -763,15 +767,15 @@ Returns an array of all logs matching a given filter object.
 
 - Object containing:
 
-    `fromBlock`: `QUANTITY|TAG` - (optional, default: `"latest"`) Integer block number, or `"latest"` for the last mined block or `"pending"`, `"earliest"` for not yet mined transactions.
+  `fromBlock`: `QUANTITY|TAG` - (optional, default: `"latest"`) Integer block number, or `"latest"` for the last mined block or `"pending"`, `"earliest"` for not yet mined transactions.
 
-    `toBlock`: `QUANTITY|TAG` - (optional, default: `"latest"`) Integer block number, or `"latest"` for the last mined block or `"pending"`, `"earliest"` for not yet mined transactions.
+  `toBlock`: `QUANTITY|TAG` - (optional, default: `"latest"`) Integer block number, or `"latest"` for the last mined block or `"pending"`, `"earliest"` for not yet mined transactions.
 
-    `address`: `DATA|Array`, 20 Bytes - (optional) Contract address or a list of addresses from which logs should originate.
+  `address`: `DATA|Array`, 20 Bytes - (optional) Contract address or a list of addresses from which logs should originate.
 
-    `topics`: Array of `DATA`, - (optional) Array of 32 Bytes `DATA` topics. Topics are order-dependent. Each topic can also be an array of `DATA` with “or” options.
+  `topics`: Array of `DATA`, - (optional) Array of 32 Bytes `DATA` topics. Topics are order-dependent. Each topic can also be an array of `DATA` with “or” options.
 
-    `blockhash`: (optional, future) With the addition of [EIP-234](https://eips.ethereum.org/EIPS/eip-234), `blockHash` will be a new filter option which restricts the logs returned to the single block with the 32-byte hash `blockHash`. Using `blockHash` is equivalent to `fromBlock` = `toBlock` = the block number with hash `blockHash`. If `blockHash` is present in in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.
+  `blockhash`: (optional, future) With the addition of [EIP-234](https://eips.ethereum.org/EIPS/eip-234), `blockHash` will be a new filter option which restricts the logs returned to the single block with the 32-byte hash `blockHash`. Using `blockHash` is equivalent to `fromBlock` = `toBlock` = the block number with hash `blockHash`. If `blockHash` is present in in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.
 
 ```json
 // Request
@@ -803,7 +807,7 @@ Returns the account- and storage-values of the specified account including the M
 
 - Integer of the position in the storage
 
-- Block Number  or Block Hash ([EIP-1898](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1898.md))
+- Block Number or Block Hash ([EIP-1898](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1898.md))
 
 ```json
 // Request
@@ -812,7 +816,6 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getProof","params":["0x12345
 // Result
 {"jsonrpc": "2.0", "id": 1, "result": {"address": "0x1234567890123456789012345678901234567890", "accountProof": ["0xf90211a090dcaf88c40c7bbc95a912cbdde67c175767b31173df9ee4b0d733bfdd511c43a0babe369f6b12092f49181ae04ca173fb68d1a5456f18d20fa32cba73954052bda0473ecf8a7e36a829e75039a3b055e51b8332cbf03324ab4af2066bbd6fbf0021a0bbda34753d7aa6c38e603f360244e8f59611921d9e1f128372fec0d586d4f9e0a04e44caecff45c9891f74f6a2156735886eedf6f1a733628ebc802ec79d844648a0a5f3f2f7542148c973977c8a1e154c4300fec92f755f7846f1b734d3ab1d90e7a0e823850f50bf72baae9d1733a36a444ab65d0a6faaba404f0583ce0ca4dad92da0f7a00cbe7d4b30b11faea3ae61b7f1f2b315b61d9f6bd68bfe587ad0eeceb721a07117ef9fc932f1a88e908eaead8565c19b5645dc9e5b1b6e841c5edbdfd71681a069eb2de283f32c11f859d7bcf93da23990d3e662935ed4d6b39ce3673ec84472a0203d26456312bbc4da5cd293b75b840fc5045e493d6f904d180823ec22bfed8ea09287b5c21f2254af4e64fca76acc5cd87399c7f1ede818db4326c98ce2dc2208a06fc2d754e304c48ce6a517753c62b1a9c1d5925b89707486d7fc08919e0a94eca07b1c54f15e299bd58bdfef9741538c7828b5d7d11a489f9c20d052b3471df475a051f9dd3739a927c89e357580a4c97b40234aa01ed3d5e0390dc982a7975880a0a089d613f26159af43616fd9455bb461f4869bfede26f2130835ed067a8b967bfb80", "0xf90211a0395d87a95873cd98c21cf1df9421af03f7247880a2554e20738eec2c7507a494a0bcf6546339a1e7e14eb8fb572a968d217d2a0d1f3bc4257b22ef5333e9e4433ca012ae12498af8b2752c99efce07f3feef8ec910493be749acd63822c3558e6671a0dbf51303afdc36fc0c2d68a9bb05dab4f4917e7531e4a37ab0a153472d1b86e2a0ae90b50f067d9a2244e3d975233c0a0558c39ee152969f6678790abf773a9621a01d65cd682cc1be7c5e38d8da5c942e0a73eeaef10f387340a40a106699d494c3a06163b53d956c55544390c13634ea9aa75309f4fd866f312586942daf0f60fb37a058a52c1e858b1382a8893eb9c1f111f266eb9e21e6137aff0dddea243a567000a037b4b100761e02de63ea5f1fcfcf43e81a372dafb4419d126342136d329b7a7ba032472415864b08f808ba4374092003c8d7c40a9f7f9fe9cc8291f62538e1cc14a074e238ff5ec96b810364515551344100138916594d6af966170ff326a092fab0a0d31ac4eef14a79845200a496662e92186ca8b55e29ed0f9f59dbc6b521b116fea090607784fe738458b63c1942bba7c0321ae77e18df4961b2bc66727ea996464ea078f757653c1b63f72aff3dcc3f2a2e4c8cb4a9d36d1117c742833c84e20de994a0f78407de07f4b4cb4f899dfb95eedeb4049aeb5fc1635d65cf2f2f4dfd25d1d7a0862037513ba9d45354dd3e36264aceb2b862ac79d2050f14c95657e43a51b85c80", "0xf90171a04ad705ea7bf04339fa36b124fa221379bd5a38ffe9a6112cb2d94be3a437b879a08e45b5f72e8149c01efcb71429841d6a8879d4bbe27335604a5bff8dfdf85dcea00313d9b2f7c03733d6549ea3b810e5262ed844ea12f70993d87d3e0f04e3979ea0b59e3cdd6750fa8b15164612a5cb6567cdfb386d4e0137fccee5f35ab55d0efda0fe6db56e42f2057a071c980a778d9a0b61038f269dd74a0e90155b3f40f14364a08538587f2378a0849f9608942cf481da4120c360f8391bbcc225d811823c6432a026eac94e755534e16f9552e73025d6d9c30d1d7682a4cb5bd7741ddabfd48c50a041557da9a74ca68da793e743e81e2029b2835e1cc16e9e25bd0c1e89d4ccad6980a041dda0a40a21ade3a20fcd1a4abb2a42b74e9a32b02424ff8db4ea708a5e0fb9a09aaf8326a51f613607a8685f57458329b41e938bb761131a5747e066b81a0a16808080a022e6cef138e16d2272ef58434ddf49260dc1de1f8ad6dfca3da5d2a92aaaadc58080", "0xf851808080a009833150c367df138f1538689984b8a84fc55692d3d41fe4d1e5720ff5483a6980808080808080808080a0a319c1c415b271afc0adcb664e67738d103ac168e0bc0b7bd2da7966165cb9518080"], "balance": "0x0", "codeHash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470", "nonce": "0x0", "storageHash": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421", "storageProof": [{"key": "0x0000000000000000000000000000000000000000000000000000000000000000", "value": "0x0", "proof": []}, {"key": "0x0000000000000000000000000000000000000000000000000000000000000001", "value": "0x0", "proof": []}]}}
 ```
-
 
 ## WebSocket Methods
 
@@ -875,8 +878,6 @@ Returns the address of the new account.
 **2:** password `string`
 
 - Required: ✓ Yes
-
-
 
 ```json
 // Request
@@ -986,11 +987,11 @@ The account is not unlocked globally in the node and cannot be used in other RPC
 
 - Object containing:
 
-    `from`: `DATA`, 20 Bytes - The address the transaction is send from.
+  `from`: `DATA`, 20 Bytes - The address the transaction is send from.
 
-    `to`: `DATA`, 20 Bytes - (optional when creating new contract) The address the transaction is directed to.
+  `to`: `DATA`, 20 Bytes - (optional when creating new contract) The address the transaction is directed to.
 
-    `value`: QUANTITY - value sent with this transaction
+  `value`: QUANTITY - value sent with this transaction
 
 - Passphrase
 
@@ -1062,7 +1063,7 @@ Parameters must be given by position.
 
 1: url `string`
 
--  Required: ✓ Yes
+- Required: ✓ Yes
 
 #### Client Examples
 
@@ -1089,7 +1090,6 @@ personal.initializeWallet(url);
 
 :::
 ::::
-
 
 ### `personal_unpair`
 
@@ -1125,13 +1125,11 @@ wscat -c ws://localhost:8546 -x '{"jsonrpc": "2.0", "id": 1, "method": "personal
 ::: tab Javascript Console
 
 ```javascript
-personal.unpair(url,pin);
+personal.unpair(url, pin);
 ```
 
 :::
 ::::
-
-
 
 ## Debug Methods
 
@@ -1166,7 +1164,6 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"debug_traceBlockByNumber","param
 //Result
 {"jsonrpc":"2.0","id":1,"result":[{"result":["68410", "51470"]}]}
 ```
-
 
 ## Miner Methods
 
@@ -1224,7 +1221,7 @@ Sets the minimal gas price used to accept transactions. Any transaction below th
 
 This method requires a `node` restart after being called because it changes the configuration file.
 
-Make sure your `evmosd start` call is not using the flag `minimum-gas-prices` because this value will be used instead of the one set on the configuration file.
+Make sure your `mjtd start` call is not using the flag `minimum-gas-prices` because this value will be used instead of the one set on the configuration file.
 
 #### Parameters
 
@@ -1448,5 +1445,5 @@ txpool.status();
 #### Result
 
 ```json
-{"jsonrpc":"2.0","id":1,"result":{"pending":"0x0","queued":"0x0"}}
+{ "jsonrpc": "2.0", "id": 1, "result": { "pending": "0x0", "queued": "0x0" } }
 ```

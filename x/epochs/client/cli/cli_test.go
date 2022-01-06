@@ -10,9 +10,9 @@ import (
 
 	"github.com/tharsis/ethermint/testutil/network"
 
-	evmosnetwork "github.com/tharsis/evmos/testutil/network"
-	"github.com/tharsis/evmos/x/epochs/client/cli"
-	"github.com/tharsis/evmos/x/epochs/types"
+	evmosnetwork "github.com/majesticchain/majestic-star-chain/testutil/network"
+	"github.com/majesticchain/majestic-star-chain/x/epochs/client/cli"
+	"github.com/majesticchain/majestic-star-chain/x/epochs/types"
 )
 
 type IntegrationTestSuite struct {

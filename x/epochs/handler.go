@@ -6,8 +6,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/tharsis/evmos/x/epochs/keeper"
-	"github.com/tharsis/evmos/x/epochs/types"
+	"github.com/majesticchain/majestic-star-chain/x/epochs/keeper"
+	"github.com/majesticchain/majestic-star-chain/x/epochs/types"
 )
 
 // NewHandler returns a handler for epochs module messages

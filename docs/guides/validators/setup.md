@@ -43,15 +43,15 @@ As the usage of the blockchain grows, the server requirements may increase as we
 Your `evmosvalconspub` can be used to create a new validator by staking tokens. You can find your validator pubkey by running:
 
 ```bash
-evmosd tendermint show-validator
+mjtd tendermint show-validator
 ```
 
 To create your validator, just use the following command:
 
 ```bash
-evmosd tx staking create-validator \
+mjtd tx staking create-validator \
   --amount=1000000aphoton \
-  --pubkey=$(evmosd tendermint show-validator) \
+  --pubkey=$(mjtd tendermint show-validator) \
   --moniker="choose a moniker" \
   --chain-id=<chain_id> \
   --commission-rate="0.10" \
@@ -81,17 +81,17 @@ you have some stake at genesis, create one (or multiple) transactions to bond th
 Your `evmosvalconspub` can be used to create a new validator by staking tokens. You can find your validator pubkey by running:
 
 ```bash
-evmosd tendermint show-validator
+mjtd tendermint show-validator
 ```
 
-Next, craft your `evmosd gentx` command.
+Next, craft your `mjtd gentx` command.
 
 ::: tip
 A `gentx` is a JSON file carrying a self-delegation. All genesis transactions are collected by a `genesis coordinator` and validated against an initial `genesis.json`.
 :::
 
 ```bash
-evmosd gentx \
+mjtd gentx \
   --amount <amount_of_delegation_aphoton> \
   --commission-rate <commission_rate> \
   --commission-max-rate <commission_max_rate> \
@@ -104,7 +104,7 @@ evmosd gentx \
 When specifying commission parameters, the `commission-max-change-rate` is used to measure % _point_ change over the `commission-rate`. E.g. 1% to 2% is a 100% rate increase, but only 1 percentage point.
 :::
 
-You can then submit your `gentx` on the [launch repository](https://github.com/cosmos/launch). These `gentx` will be used to form the final genesis file. 
+You can then submit your `gentx` on the [launch repository](https://github.com/cosmos/launch). These `gentx` will be used to form the final genesis file.
 
 ## Edit Validator Description
 
@@ -115,7 +115,7 @@ The <key_name> specifies which validator you are editing. If you choose to not i
 The `--identity` can be used as to verify identity with systems like Keybase or UPort. When using with Keybase `--identity` should be populated with a 16-digit string that is generated with a [keybase.io](https://keybase.io) account. It's a cryptographically secure method of verifying your identity across multiple online networks. The Keybase API allows us to retrieve your Keybase avatar. This is how you can add a logo to your validator profile.
 
 ```bash
-evmosd tx staking edit-validator
+mjtd tx staking edit-validator
   --moniker="choose a moniker" \
   --website="https://evmos.org" \
   --identity=6A0D65E29A4CBC8E \
@@ -127,7 +127,7 @@ evmosd tx staking edit-validator
   --commission-rate="0.10"
 ```
 
-__Note__: The `commission-rate` value must adhere to the following invariants:
+**Note**: The `commission-rate` value must adhere to the following invariants:
 
 - Must be between 0 and the validator's `commission-max-rate`
 - Must not exceed the validator's `commission-max-change-rate` which is maximum
@@ -139,7 +139,7 @@ __Note__: The `commission-rate` value must adhere to the following invariants:
 View the validator's information with this command:
 
 ```bash
-evmosd query staking validator <account_cosmos>
+mjtd query staking validator <account_cosmos>
 ```
 
 ## Track Validator Signing Information
@@ -147,7 +147,7 @@ evmosd query staking validator <account_cosmos>
 In order to keep track of a validator's signatures in the past you can do so by using the `signing-info` command:
 
 ```bash
-evmosd query slashing signing-info <validator-pubkey>\
+mjtd query slashing signing-info <validator-pubkey>\
   --chain-id=<chain_id>
 ```
 
@@ -156,7 +156,7 @@ evmosd query slashing signing-info <validator-pubkey>\
 When a validator is "jailed" for downtime, you must submit an `Unjail` transaction from the operator account in order to be able to get block proposer rewards again (depends on the zone fee distribution).
 
 ```bash
-evmosd tx slashing unjail \
+mjtd tx slashing unjail \
   --from=<key_name> \
   --chain-id=<chain_id>
 ```
@@ -166,10 +166,10 @@ evmosd tx slashing unjail \
 Your validator is active if the following command returns anything:
 
 ```bash
-evmosd query tendermint-validator-set | grep "$(evmosd tendermint show-address)"
+mjtd query tendermint-validator-set | grep "$(mjtd tendermint show-address)"
 ```
 
-You should now see your validator in one of Evmos explorers. You are looking for the `bech32` encoded `address` in the `~/.evmosd/config/priv_validator.json` file.
+You should now see your validator in one of Evmos explorers. You are looking for the `bech32` encoded `address` in the `~/.mjtd/config/priv_validator.json` file.
 
 ::: warning Note
 To be in the validator set, you need to have more total voting power than the 100th validator.
@@ -180,7 +180,7 @@ To be in the validator set, you need to have more total voting power than the 10
 When attempting to perform routine maintenance or planning for an upcoming coordinated
 upgrade, it can be useful to have your validator systematically and gracefully halt.
 You can achieve this by either setting the `halt-height` to the height at which
-you want your node to shutdown or by passing the `--halt-height` flag to `evmosd`.
+you want your node to shutdown or by passing the `--halt-height` flag to `mjtd`.
 The node will shutdown with a zero exit code at that given height after committing
 the block.
 
@@ -190,10 +190,10 @@ the block.
 
 Your validator has become jailed. Validators get jailed, i.e. get removed from the active validator set, if they do not vote on `500` of the last `10000` blocks, or if they double sign.
 
-If you got jailed for downtime, you can get your voting power back to your validator. First, if `evmosd` is not running, start it up again:
+If you got jailed for downtime, you can get your voting power back to your validator. First, if `mjtd` is not running, start it up again:
 
 ```bash
-evmosd start
+mjtd start
 ```
 
 Wait for your full node to catch up to the latest block. Then, you can [unjail your validator](#unjail-validator)
@@ -201,17 +201,17 @@ Wait for your full node to catch up to the latest block. Then, you can [unjail y
 Lastly, check your validator again to see if your voting power is back.
 
 ```bash
-evmosd status
+mjtd status
 ```
 
 You may notice that your voting power is less than it used to be. That's because you got slashed for downtime!
 
 ### Problem #2: My node crashes because of `too many open files`
 
-The default number of files Linux can open (per-process) is `1024`. `evmosd` is known to open more than `1024` files. This causes the process to crash. A quick fix is to run `ulimit -n 4096` (increase the number of open files allowed) and then restart the process with `evmosd start`. If you are using `systemd` or another process manager to launch `evmosd` this may require some configuration at that level. A sample `systemd` file to fix this issue is below:
+The default number of files Linux can open (per-process) is `1024`. `mjtd` is known to open more than `1024` files. This causes the process to crash. A quick fix is to run `ulimit -n 4096` (increase the number of open files allowed) and then restart the process with `mjtd start`. If you are using `systemd` or another process manager to launch `mjtd` this may require some configuration at that level. A sample `systemd` file to fix this issue is below:
 
 ```toml
-# /etc/systemd/system/evmosd.service
+# /etc/systemd/system/mjtd.service
 [Unit]
 Description=Evmos Node
 After=network.target
@@ -220,7 +220,7 @@ After=network.target
 Type=simple
 User=ubuntu
 WorkingDirectory=/home/ubuntu
-ExecStart=/home/ubuntu/go/bin/evmosd start
+ExecStart=/home/ubuntu/go/bin/mjtd start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096

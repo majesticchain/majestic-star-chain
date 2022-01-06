@@ -23,9 +23,9 @@ The root HD path for Evmos-based accounts is `m/44'/60'/0'/0`.
 
 [BIP-0173](https://github.com/satoshilabs/slips/blob/master/slip-0173.md) defines a new format for segregated witness output addresses that contains a human-readable part that identifies the Bech32 usage. Evmos uses the following HRP (human readable prefix) as the base HRP:
 
-| Network   | Mainnet | Testnet | Regtest |
-|-----------|---------|---------|---------|
-| Evmos     | `evmos` | `evmos` |         |
+| Network | Mainnet | Testnet | Regtest |
+| ------- | ------- | ------- | ------- |
+| Evmos   | `evmos` | `evmos` |         |
 
 There are 3 main types of HRP for the `Addresses`/`PubKeys` available by default on Evmos:
 
@@ -34,7 +34,7 @@ There are 3 main types of HRP for the `Addresses`/`PubKeys` available by default
 - Addresses and Keys for **consensus nodes**, which identify the validator nodes participating in consensus. They are derived using the **`ed25519`** curve.
 
 |                    | Address bech32 Prefix | Pubkey bech32 Prefix | Curve           | Address byte length | Pubkey byte length |
-|--------------------|-----------------------|----------------------|-----------------|---------------------|--------------------|
+| ------------------ | --------------------- | -------------------- | --------------- | ------------------- | ------------------ |
 | Accounts           | `evmos`               | `evmospub`           | `eth_secp256k1` | `20`                | `33` (compressed)  |
 | Validator Operator | `evmosvaloper`        | `evmosvaloperpub`    | `eth_secp256k1` | `20`                | `33` (compressed)  |
 | Consensus Nodes    | `evmosvalcons`        | `evmosvalconspub`    | `ed25519`       | `20`                | `32`               |
@@ -53,13 +53,13 @@ Cosmos `sdk.AccAddress`.
 
 ### Address conversion
 
-The `evmosd debug addr <address>` can be used to convert an address between hex and bech32 formats. For example:
+The `mjtd debug addr <address>` can be used to convert an address between hex and bech32 formats. For example:
 
 :::: tabs
 ::: tab Bech32
 
 ```bash
-evmosd debug addr evmos1z3t55m0l9h0eupuz3dp5t5cypyv674jj7mz2jw
+mjtd debug addr evmos1z3t55m0l9h0eupuz3dp5t5cypyv674jj7mz2jw
   Address: [20 87 74 109 255 45 223 158 7 130 139 67 69 211 4 9 25 175 86 82]
   Address (hex): 14574A6DFF2DDF9E07828B4345D3040919AF5652
   Bech32 Acc: evmos1z3t55m0l9h0eupuz3dp5t5cypyv674jj7mz2jw
@@ -70,7 +70,7 @@ evmosd debug addr evmos1z3t55m0l9h0eupuz3dp5t5cypyv674jj7mz2jw
 ::: tab Hex
 
 ```bash
-evmosd debug addr 14574A6DFF2DDF9E07828B4345D3040919AF5652
+mjtd debug addr 14574A6DFF2DDF9E07828B4345D3040919AF5652
   Address: [20 87 74 109 255 45 223 158 7 130 139 67 69 211 4 9 25 175 86 82]
   Address (hex): 14574A6DFF2DDF9E07828B4345D3040919AF5652
   Bech32 Acc: evmos1z3t55m0l9h0eupuz3dp5t5cypyv674jj7mz2jw
@@ -83,17 +83,17 @@ evmosd debug addr 14574A6DFF2DDF9E07828B4345D3040919AF5652
 ### Key output
 
 ::: tip
-The Cosmos SDK Keyring output (i.e `evmosd keys`) only supports addresses and public keys in Bech32 format.
+The Cosmos SDK Keyring output (i.e `mjtd keys`) only supports addresses and public keys in Bech32 format.
 :::
 
-We can use the `keys show` command of `evmosd` with the flag `--bech <type> (acc|val|cons)` to
+We can use the `keys show` command of `mjtd` with the flag `--bech <type> (acc|val|cons)` to
 obtain the addresses and keys as mentioned above,
 
 :::: tabs
 ::: tab Account
 
 ```bash
-evmosd keys show mykey --bech acc
+mjtd keys show mykey --bech acc
 - name: mykey
   type: local
   address: evmos1z3t55m0l9h0eupuz3dp5t5cypyv674jj7mz2jw
@@ -105,7 +105,7 @@ evmosd keys show mykey --bech acc
 ::: tab Validator
 
 ```bash
-evmosd keys show mykey --bech val
+mjtd keys show mykey --bech val
 - name: mykey
   type: local
   address: evmosvaloper1z3t55m0l9h0eupuz3dp5t5cypyv674jjn4d6nn
@@ -117,7 +117,7 @@ evmosd keys show mykey --bech val
 ::: tab Consensus
 
 ```bash
-evmosd keys show mykey --bech cons
+mjtd keys show mykey --bech cons
 - name: mykey
   type: local
   address: evmosvalcons1rllqa5d97n6zyjhy6cnscc7zu30zjn3f7wyj2n
@@ -136,7 +136,7 @@ You can query an account address using the CLI, gRPC or
 
 ```bash
 # NOTE: the --output (-o) flag will define the output format in JSON or YAML (text)
-evmosd q auth account $(evmosd keys show mykey -a) -o text
+mjtd q auth account $(mjtd keys show mykey -a) -o text
 |
   '@type': /ethermint.types.v1.EthAccount
   base_account:
@@ -151,7 +151,7 @@ evmosd q auth account $(evmosd keys show mykey -a) -o text
 
 ### Cosmos gRPC and REST
 
-``` bash
+```bash
 # GET /cosmos/auth/v1beta1/accounts/{address}
 curl -X GET "http://localhost:10337/cosmos/auth/v1beta1/accounts/evmos14au322k9munkmx5wrchz9q30juf5wjgz2cfqku" -H "accept: application/json"
 ```

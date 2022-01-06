@@ -110,13 +110,13 @@ import (
 	feemarketkeeper "github.com/tharsis/ethermint/x/feemarket/keeper"
 	feemarkettypes "github.com/tharsis/ethermint/x/feemarket/types"
 
-	"github.com/tharsis/evmos/x/epochs"
-	epochskeeper "github.com/tharsis/evmos/x/epochs/keeper"
-	epochstypes "github.com/tharsis/evmos/x/epochs/types"
-	"github.com/tharsis/evmos/x/erc20"
-	erc20client "github.com/tharsis/evmos/x/erc20/client"
-	erc20keeper "github.com/tharsis/evmos/x/erc20/keeper"
-	erc20types "github.com/tharsis/evmos/x/erc20/types"
+	"github.com/majesticchain/majestic-star-chain/x/epochs"
+	epochskeeper "github.com/majesticchain/majestic-star-chain/x/epochs/keeper"
+	epochstypes "github.com/majesticchain/majestic-star-chain/x/epochs/types"
+	"github.com/majesticchain/majestic-star-chain/x/erc20"
+	erc20client "github.com/majesticchain/majestic-star-chain/x/erc20/client"
+	erc20keeper "github.com/majesticchain/majestic-star-chain/x/erc20/keeper"
+	erc20types "github.com/majesticchain/majestic-star-chain/x/erc20/types"
 )
 
 func init() {
@@ -125,12 +125,12 @@ func init() {
 		panic(err)
 	}
 
-	DefaultNodeHome = filepath.Join(userHomeDir, ".evmosd")
+	DefaultNodeHome = filepath.Join(userHomeDir, ".mjtd")
 }
 
 const (
 	// Name defines the application binary name
-	Name = "evmosd"
+	Name = "mjtd"
 	// latest software upgrade name
 	upgradeName = "Olympus-Mons-v0.4.1"
 )

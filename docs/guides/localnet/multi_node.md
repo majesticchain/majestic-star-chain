@@ -6,9 +6,9 @@ order: 2
 
 ## Pre-requisite Readings
 
-- [Install Starport](https://docs.starport.network/#install-starport)  {prereq}
-- [Install Docker](https://docs.docker.com/engine/installation/)  {prereq}
-- [Install docker-compose](https://docs.docker.com/compose/install/)  {prereq}
+- [Install Starport](https://docs.starport.network/#install-starport) {prereq}
+- [Install Docker](https://docs.docker.com/engine/installation/) {prereq}
+- [Install docker-compose](https://docs.docker.com/compose/install/) {prereq}
 
 ## Automated Localnet with Starport
 
@@ -28,11 +28,11 @@ To build start a 4 node testnet run:
 make localnet-start
 ```
 
-This command creates a 4-node network using the `evmosdnode` Docker image.
+This command creates a 4-node network using the `mjtdnode` Docker image.
 The ports for each node are found in this table:
 
-| Node ID          | P2P Port | Tendermint RPC Port | REST/ Ethereum JSON-RPC Port | WebSocket Port |
-|------------------|----------|---------------------|------------------------------|----------------|
+| Node ID      | P2P Port | Tendermint RPC Port | REST/ Ethereum JSON-RPC Port | WebSocket Port |
+| ------------ | -------- | ------------------- | ---------------------------- | -------------- |
 | `evmosnode0` | `26656`  | `26657`             | `8545`                       | `8546`         |
 | `evmosnode1` | `26659`  | `26660`             | `8547`                       | `8548`         |
 | `evmosnode2` | `26661`  | `26662`             | `8549`                       | `8550`         |
@@ -44,15 +44,15 @@ To update the binary, just rebuild it and restart the nodes
 make localnet-start
 ```
 
-The command above  command will run containers in the background using Docker compose. You will see the network being created:
+The command above command will run containers in the background using Docker compose. You will see the network being created:
 
 ```bash
 ...
 Creating network "evmos_localnet" with driver "bridge"
-Creating evmosdnode0 ... done
-Creating evmosdnode2 ... done
-Creating evmosdnode1 ... done
-Creating evmosdnode3 ... done
+Creating mjtdnode0 ... done
+Creating mjtdnode2 ... done
+Creating mjtdnode1 ... done
+Creating mjtdnode3 ... done
 ```
 
 ### Stop Localnet
@@ -66,55 +66,55 @@ make localnet-stop
 ### Configuration
 
 The `make localnet-start` creates files for a 4-node testnet in `./build` by
-calling the `evmosd testnet` command. This outputs a handful of files in the
+calling the `mjtd testnet` command. This outputs a handful of files in the
 `./build` directory:
 
 ```bash
 tree -L 3 build/
 
 build/
-├── evmosd
-├── evmosd
+├── mjtd
+├── mjtd
 ├── gentxs
 │   ├── node0.json
 │   ├── node1.json
 │   ├── node2.json
 │   └── node3.json
 ├── node0
-│   ├── evmosd
+│   ├── mjtd
 │   │   ├── key_seed.json
 │   │   └── keyring-test-cosmos
-│   └── evmosd
+│   └── mjtd
 │       ├── config
 │       ├── data
-│       └── evmosd.log
+│       └── mjtd.log
 ├── node1
-│   ├── evmosd
+│   ├── mjtd
 │   │   ├── key_seed.json
 │   │   └── keyring-test-cosmos
-│   └── evmosd
+│   └── mjtd
 │       ├── config
 │       ├── data
-│       └── evmosd.log
+│       └── mjtd.log
 ├── node2
-│   ├── evmosd
+│   ├── mjtd
 │   │   ├── key_seed.json
 │   │   └── keyring-test-cosmos
-│   └── evmosd
+│   └── mjtd
 │       ├── config
 │       ├── data
-│       └── evmosd.log
+│       └── mjtd.log
 └── node3
-    ├── evmosd
+    ├── mjtd
     │   ├── key_seed.json
     │   └── keyring-test-cosmos
-    └── evmosd
+    └── mjtd
         ├── config
         ├── data
-        └── evmosd.log
+        └── mjtd.log
 ```
 
-Each `./build/nodeN` directory is mounted to the `/evmosd` directory in each container.
+Each `./build/nodeN` directory is mounted to the `/mjtd` directory in each container.
 
 ### Logging
 
@@ -122,10 +122,10 @@ In order to see the logs of a particular node you can use the following command:
 
 ```bash
 # node 0: daemon logs
-docker exec evmosdnode0 tail evmosd.log
+docker exec mjtdnode0 tail mjtd.log
 
 # node 0: REST & RPC logs
-docker exec evmosdnode0 tail evmosd.log
+docker exec mjtdnode0 tail mjtd.log
 ```
 
 The logs for the daemon will look like:
@@ -163,7 +163,7 @@ You can also watch logs as they are produced via Docker with the `--follow` (`-f
 example:
 
 ```bash
-docker logs -f evmosdnode0
+docker logs -f mjtdnode0
 ```
 
 ### Interact with the Localnet
@@ -173,7 +173,7 @@ docker logs -f evmosdnode0
 To interact with the testnet via WebSockets or RPC/API, you will send your request to the corresponding ports:
 
 | EVM JSON-RPC | Eth Websocket |
-|--------------|---------------|
+| ------------ | ------------- |
 | `8545`       | `8546`        |
 
 You can send a curl command such as:
@@ -190,18 +190,18 @@ Additional instructions on how to interact with the WebSocket can be found on th
 
 ### Keys & Accounts
 
-To interact with `evmosd` and start querying state or creating txs, you use the
-`evmosd` directory of any given node as your `home`, for example:
+To interact with `mjtd` and start querying state or creating txs, you use the
+`mjtd` directory of any given node as your `home`, for example:
 
 ```bash
-evmosd keys list --home ./build/node0/evmosd
+mjtd keys list --home ./build/node0/mjtd
 ```
 
 Now that accounts exists, you may create new accounts and send those accounts
 funds!
 
 ::: tip
-**Note**: Each node's seed is located at `./build/nodeN/evmosd/key_seed.json` and can be restored to the CLI using the `evmosd keys add --restore` command
+**Note**: Each node's seed is located at `./build/nodeN/mjtd/key_seed.json` and can be restored to the CLI using the `mjtd keys add --restore` command
 :::
 
 ### Special Binaries

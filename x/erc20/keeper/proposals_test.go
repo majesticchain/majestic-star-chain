@@ -10,7 +10,7 @@ import (
 
 	"github.com/tharsis/ethermint/tests"
 
-	"github.com/tharsis/evmos/x/erc20/types"
+	"github.com/majesticchain/majestic-star-chain/x/erc20/types"
 )
 
 const (
