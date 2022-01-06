@@ -37,7 +37,6 @@ import (
 	ethermintserver "github.com/tharsis/ethermint/server"
 	servercfg "github.com/tharsis/ethermint/server/config"
 	srvflags "github.com/tharsis/ethermint/server/flags"
-	ethermint "github.com/tharsis/ethermint/types"
 
 	"github.com/majesticchain/majestic-star-chain/app"
 )
