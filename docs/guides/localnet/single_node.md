@@ -22,10 +22,10 @@ LOGLEVEL="info"
 
 
 # Allocate genesis accounts (cosmos formatted addresses)
-mjtd add-genesis-account $KEY 100000000000000000000000000aphoton --keyring-backend $KEYRING
+mjtd add-genesis-account $KEY 100000000000000000000000000amjt --keyring-backend $KEYRING
 
 # Sign genesis transaction
-mjtd gentx $KEY 1000000000000000000000aphoton --keyring-backend $KEYRING --chain-id $CHAINID
+mjtd gentx $KEY 1000000000000000000000amjt --keyring-backend $KEYRING --chain-id $CHAINID
 ```
 
 The default configuration will generate a single validator localnet with the chain-id
@@ -70,10 +70,10 @@ Before starting the chain, you need to populate the state with at least one acco
 mjtd keys add my_validator --keyring-backend=test
 ```
 
-Once you have created a local account, go ahead and grant it some `aphoton` tokens in your chain's genesis file. Doing so will also make sure your chain is aware of this account's existence:
+Once you have created a local account, go ahead and grant it some `amjt` tokens in your chain's genesis file. Doing so will also make sure your chain is aware of this account's existence:
 
 ```bash
-mjtd add-genesis-account my_validator 10000000000aphoton --keyring-backend test
+mjtd add-genesis-account my_validator 10000000000amjt --keyring-backend test
 ```
 
 Now that your account has some tokens, you need to add a validator to your chain.
@@ -84,7 +84,7 @@ For this guide, you will add your local node (created via the `init` command abo
 # Create a gentx
 # NOTE: this command lets you set the number of coins.
 # Make sure this account has some coins with the genesis.app_state.staking.params.bond_denom denom
-mjtd add-genesis-account my_validator 1000000000stake,10000000000aphoton
+mjtd add-genesis-account my_validator 1000000000stake,10000000000amjt
 ```
 
 A `gentx` does three things:

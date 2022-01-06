@@ -11,7 +11,7 @@ echo "init Evmos with moniker=$MONIKER and chain-id=$CHAINID"
 ./mjtd init $MONIKER --chain-id $CHAINID --home $DATA_DIR
 echo "prepare genesis: Allocate genesis accounts"
 ./mjtd add-genesis-account \
-"$(./mjtd keys show $KEY -a --home $DATA_DIR --keyring-backend test)" 1000000000000000000aphoton,1000000000000000000stake \
+"$(./mjtd keys show $KEY -a --home $DATA_DIR --keyring-backend test)" 1000000000000000000amjt,1000000000000000000stake \
 --home $DATA_DIR --keyring-backend test
 echo "prepare genesis: Sign genesis transaction"
 ./mjtd gentx $KEY 1000000000000000000stake --keyring-backend test --home $DATA_DIR --keyring-backend test --chain-id $CHAINID

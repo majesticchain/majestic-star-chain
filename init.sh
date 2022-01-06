@@ -21,16 +21,17 @@ mjtd config keyring-backend $KEYRING
 mjtd config chain-id $CHAINID
 
 # if $KEY exists it should be deleted
-mjtd keys add $KEY --keyring-backend $KEYRING --algo $KEYALGO
+#mjtd keys add $KEY --keyring-backend $KEYRING --algo $KEYALGO
+echo "make gap paddle foil cactus course rule sell junk reveal guide milk speed multiply clown wedding exit snake atom plug amazing blossom danger depend" | mjtd keys add $KEY --recover
 
 # Set moniker and chain-id for Evmos (Moniker can be anything, chain-id must be an integer)
 mjtd init $MONIKER --chain-id $CHAINID 
 
-# Change parameter token denominations to aphoton
-cat $HOME/.mjtd/config/genesis.json | jq '.app_state["staking"]["params"]["bond_denom"]="aphoton"' > $HOME/.mjtd/config/tmp_genesis.json && mv $HOME/.mjtd/config/tmp_genesis.json $HOME/.mjtd/config/genesis.json
-cat $HOME/.mjtd/config/genesis.json | jq '.app_state["crisis"]["constant_fee"]["denom"]="aphoton"' > $HOME/.mjtd/config/tmp_genesis.json && mv $HOME/.mjtd/config/tmp_genesis.json $HOME/.mjtd/config/genesis.json
-cat $HOME/.mjtd/config/genesis.json | jq '.app_state["gov"]["deposit_params"]["min_deposit"][0]["denom"]="aphoton"' > $HOME/.mjtd/config/tmp_genesis.json && mv $HOME/.mjtd/config/tmp_genesis.json $HOME/.mjtd/config/genesis.json
-cat $HOME/.mjtd/config/genesis.json | jq '.app_state["mint"]["params"]["mint_denom"]="aphoton"' > $HOME/.mjtd/config/tmp_genesis.json && mv $HOME/.mjtd/config/tmp_genesis.json $HOME/.mjtd/config/genesis.json
+# Change parameter token denominations to amjt
+cat $HOME/.mjtd/config/genesis.json | jq '.app_state["staking"]["params"]["bond_denom"]="amjt"' > $HOME/.mjtd/config/tmp_genesis.json && mv $HOME/.mjtd/config/tmp_genesis.json $HOME/.mjtd/config/genesis.json
+cat $HOME/.mjtd/config/genesis.json | jq '.app_state["crisis"]["constant_fee"]["denom"]="amjt"' > $HOME/.mjtd/config/tmp_genesis.json && mv $HOME/.mjtd/config/tmp_genesis.json $HOME/.mjtd/config/genesis.json
+cat $HOME/.mjtd/config/genesis.json | jq '.app_state["gov"]["deposit_params"]["min_deposit"][0]["denom"]="amjt"' > $HOME/.mjtd/config/tmp_genesis.json && mv $HOME/.mjtd/config/tmp_genesis.json $HOME/.mjtd/config/genesis.json
+cat $HOME/.mjtd/config/genesis.json | jq '.app_state["mint"]["params"]["mint_denom"]="amjt"' > $HOME/.mjtd/config/tmp_genesis.json && mv $HOME/.mjtd/config/tmp_genesis.json $HOME/.mjtd/config/genesis.json
 
 # increase block time (?)
 cat $HOME/.mjtd/config/genesis.json | jq '.consensus_params["block"]["time_iota_ms"]="30000"' > $HOME/.mjtd/config/tmp_genesis.json && mv $HOME/.mjtd/config/tmp_genesis.json $HOME/.mjtd/config/genesis.json
@@ -70,10 +71,10 @@ if [[ $1 == "pending" ]]; then
 fi
 
 # Allocate genesis accounts (cosmos formatted addresses)
-mjtd add-genesis-account $KEY 100000000000000000000000000aphoton --keyring-backend $KEYRING
+mjtd add-genesis-account $KEY 100000000000000000000000000amjt --keyring-backend $KEYRING
 
 # Sign genesis transaction
-mjtd gentx $KEY 1000000000000000000000aphoton --keyring-backend $KEYRING --chain-id $CHAINID
+mjtd gentx $KEY 1000000000000000000000amjt --keyring-backend $KEYRING --chain-id $CHAINID
 
 # Collect genesis tx
 mjtd collect-gentxs
@@ -86,4 +87,4 @@ if [[ $1 == "pending" ]]; then
 fi
 
 # Start the node (remove the --pruning=nothing flag if historical queries are not needed)
-mjtd start --pruning=nothing $TRACE --log_level $LOGLEVEL --minimum-gas-prices=0.0001aphoton --json-rpc.api eth,txpool,personal,net,debug,web3
+mjtd start --pruning=nothing $TRACE --log_level $LOGLEVEL --minimum-gas-prices=0.0001amjt --json-rpc.api eth,txpool,personal,net,debug,web3

@@ -26,7 +26,7 @@ RECIPIENT=$(mjtd keys show recipient -a --keyring-backend=file)
 The command above creates a local key-pair that is not yet registered on the chain. An account is created the first time it receives tokens from another account. Now, run the following command to send tokens to the `recipient` account:
 
 ```bash
-mjtd tx bank send $MY_VALIDATOR_ADDRESS $RECIPIENT 1000000aphoton --chain-id=evmos_9000-2 --keyring-backend=file
+mjtd tx bank send $MY_VALIDATOR_ADDRESS $RECIPIENT 1000000amjt --chain-id=evmos_9000-2 --keyring-backend=file
 
 # Check that the recipient account did receive the tokens.
 mjtd query bank balances $RECIPIENT --chain-id=evmos_9000-2
@@ -35,7 +35,7 @@ mjtd query bank balances $RECIPIENT --chain-id=evmos_9000-2
 Finally, delegate some of the stake tokens sent to the `recipient` account to the validator:
 
 ```bash
-mjtd tx staking delegate $(mjtd keys show my_validator --bech val -a --keyring-backend=file) 500aphoton --from=recipient --chain-id=evmos_9000-2 --keyring-backend=file
+mjtd tx staking delegate $(mjtd keys show my_validator --bech val -a --keyring-backend=file) 500amjt --from=recipient --chain-id=evmos_9000-2 --keyring-backend=file
 
 # Query the total delegations to `validator`.
 mjtd query staking delegations-to $(mjtd keys show my_validator --bech val -a --keyring-backend=file) --chain-id=evmos_9000-2

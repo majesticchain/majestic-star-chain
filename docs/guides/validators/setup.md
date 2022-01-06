@@ -50,7 +50,7 @@ To create your validator, just use the following command:
 
 ```bash
 mjtd tx staking create-validator \
-  --amount=1000000aphoton \
+  --amount=1000000amjt \
   --pubkey=$(mjtd tendermint show-validator) \
   --moniker="choose a moniker" \
   --chain-id=<chain_id> \
@@ -59,7 +59,7 @@ mjtd tx staking create-validator \
   --commission-max-change-rate="0.01" \
   --min-self-delegation="1000000" \
   --gas="auto" \
-  --gas-prices="0.025aphoton" \
+  --gas-prices="0.025amjt" \
   --from=<key_name>
 ```
 
@@ -68,7 +68,7 @@ When specifying commission parameters, the `commission-max-change-rate` is used 
 :::
 
 ::: tip
-`Min-self-delegation` is a strictly positive integer that represents the minimum amount of self-delegated voting power your validator must always have. A `min-self-delegation` of `1000000` means your validator will never have a self-delegation lower than `1 aphoton`
+`Min-self-delegation` is a strictly positive integer that represents the minimum amount of self-delegated voting power your validator must always have. A `min-self-delegation` of `1000000` means your validator will never have a self-delegation lower than `1 amjt`
 :::
 
 You can confirm that you are in the validator set by using a third party explorer.
@@ -92,7 +92,7 @@ A `gentx` is a JSON file carrying a self-delegation. All genesis transactions ar
 
 ```bash
 mjtd gentx \
-  --amount <amount_of_delegation_aphoton> \
+  --amount <amount_of_delegation_amjt> \
   --commission-rate <commission_rate> \
   --commission-max-rate <commission_max_rate> \
   --commission-max-change-rate <commission_max_change_rate> \
@@ -122,7 +122,7 @@ mjtd tx staking edit-validator
   --details="To infinity and beyond!" \
   --chain-id=<chain_id> \
   --gas="auto" \
-  --gas-prices="0.025aphoton" \
+  --gas-prices="0.025amjt" \
   --from=<key_name> \
   --commission-rate="0.10"
 ```
