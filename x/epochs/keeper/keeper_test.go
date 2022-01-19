@@ -17,7 +17,7 @@ import (
 type KeeperTestSuite struct {
 	suite.Suite
 
-	app         *app.Evmos
+	app         *app.Mjt
 	ctx         sdk.Context
 	queryClient types.QueryClient
 }
