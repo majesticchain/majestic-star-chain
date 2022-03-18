@@ -1,14 +1,14 @@
 <!--
 layout: home
-title: Evmos Documentation
-description: Evmos is a scalable and interoperable Ethereum, built on Proof-of-Stake with fast-finality.
+title: Majestic StarChain Documentation
+description: Majestic StarChain is a scalable and interoperable Ethereum, built on Proof-of-Stake with fast-finality.
 sections:
   - title: Introduction
-    desc: Read a high-level overview of Evmos and its architecture.
+    desc: Read a high-level overview of Majestic StarChain and its architecture.
     url: /intro
     icon: ethereum-intro
   - title: Basics
-    desc: Start with the basic concepts of Evmos, like accounts and transactions.
+    desc: Start with the basic concepts of Majestic StarChain, like accounts and transactions.
     url: /basics
     icon: basics
   - title: Core Concepts
@@ -27,7 +27,7 @@ stack:
     label: ethereum-black
     url: https://eth.wiki
   - title: Tendermint Core
-    desc: The leading BFT engine for building blockchains, powering Evmos.
+    desc: The leading BFT engine for building blockchains, powering Majestic StarChain.
     color: "#00BB00"
     label: core
     url: http://docs.tendermint.com
@@ -36,18 +36,18 @@ footer:
 aside: false
 -->
 
-# Evmos Documentation
+# Majestic StarChain Documentation
 
 ## Get Started
 
-- **[Introduction](./intro/overview.md)**: High-level overview of Evmos.
+- **[Introduction](./intro/overview.md)**: High-level overview of Majestic StarChain.
 
 ## Reference
 
-- **[Basics](./basics/)**: Documentation on the basic concepts of Evmos, like the standard anatomy of an application, the transaction lifecycle and accounts management.
-- **[Core](./core/)**: Documentation on the core concepts of Evmos, like `encoding`, and `events`.
+- **[Basics](./basics/)**: Documentation on the basic concepts of Majestic StarChain, like the standard anatomy of an application, the transaction lifecycle and accounts management.
+- **[Core](./core/)**: Documentation on the core concepts of Majestic StarChain, like `encoding`, and `events`.
 - **[Building Modules](./building-modules/)**: Important concepts for module developers like `message`s, `keeper`s, `handler`s and `querier`s.
-- **[Interfaces](./interfaces/)**: Documentation on building interfaces for Evmos applications.
+- **[Interfaces](./interfaces/)**: Documentation on building interfaces for Majestic StarChain applications.
 
 ## Other Resources
 

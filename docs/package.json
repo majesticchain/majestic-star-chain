@@ -1,7 +1,7 @@
 {
   "name": "docs",
   "version": "1.0.0",
-  "description": "Evmos Documentation",
+  "description": "Majestic StarChain Documentation",
   "main": "index.js",
   "scripts": {
     "preserve": "./pre.sh",
@@ -13,14 +13,14 @@
     "postbuild": "./post.sh"
   },
   "keywords": [
-    "evmos",
+    "mjt",
     "cosmos",
     "ethereum",
     "blockchain",
     "cryptocurrency",
     "evm"
   ],
-  "author": "Tharsis",
+  "author": "Majestic StarChain",
   "license": "ISC",
   "dependencies": {
     "entities": "^2.0.3",

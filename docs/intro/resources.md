@@ -4,11 +4,11 @@ order: 4
 
 # Resources
 
-Learn about Evmos with the list of official resources. {synopsis}
+Learn about Majestic StarChain with the list of official resources. {synopsis}
 
 - Official Documentation: [https://evmos.dev/](https://evmos.dev/)
 - Official Codebase: [https://github.com/majesticchain/majestic-star-chain](https://github.com/majesticchain/majestic-star-chain)
-- Official Website: [https://evmos.org/](https://evmos.org/)
+- Official Website: [https://majesticswap.io/](https://majesticswap.io/)
 
 ## Workshops and Videos
 
@@ -39,8 +39,3 @@ Note: most of these articles are outdated as they refer to the previous Ethermin
 ## Previous Ethermint implementations
 
 - [Ethermint ABCI:](https://github.com/cosmos/ethermint_abci) This project was the first and original Tendermint ABCI application with EVM support. Not built with Cosmos SDK.
-- [Ethermint (archive):](https://github.com/tharsis/ethermint-archive) Precursor implementation of the current project, developed by [All in Bits Inc](https://tendermint.com/). It was aiming to implement [Turbo-Geth](https://github.com/ledgerwatch/turbo-geth) as the EVM for scalability improvements.
-
-## Next {hide}
-
-Learn how to run an Evmos [node](./../quickstart/run_node.md) {hide}

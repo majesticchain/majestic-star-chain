@@ -6,10 +6,9 @@ parent:
 
 # Basics
 
-This repository contains reference documentation on the basic concepts of Evmos.
+This repository contains reference documentation on the basic concepts of Majestic StarChain.
 
 1. [Chain ID](./chain_id.md)
-1. [Accounts](./accounts.md)
 1. [Gas and Fees](./gas.md)
 1. [Lifecycle of a transaction](./transactions.md)
 1. [Tokens](./tokens.md)

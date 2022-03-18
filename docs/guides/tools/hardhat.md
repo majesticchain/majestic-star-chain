@@ -4,14 +4,9 @@ order: 2
 
 # Hardhat: Deploying a Smart Contract
 
-Learn how to deploy a simple Solidity-based smart contract to Evmos using the Hardhat environment {synopsis}
+Learn how to deploy a simple Solidity-based smart contract to Majestic StarChain using the Hardhat environment {synopsis}
 
-[Hardhat](https://hardhat.org/) is a flexible development environment for building Ethereum-based smart contracts. It is designed with integrations and extensibility in mind
-
-## Pre-requisite Readings
-
-- [Installation](./../../quickstart/installation.md) {prereq}
-- [Run a node](./../../quickstart/run_node.md) {prereq}
+[Hardhat](https://hardhat.org/) is a flexible development environment for building Ethereum-based smart contracts. It is designed with integrations and extensibility in mind.
 
 ## Install Dependencies
 
@@ -50,10 +45,6 @@ $ npm -v
 ...
 ```
 
-::: tip
-If you haven't already, you will also need to install Evmos if you plan on deploying your smart contracts locally. Check this [document](./../../quickstart/installation.md) for the full instructions.
-:::
-
 ## Create Hardhat Project
 
 To create a new project, navigate to your project directory and run:
@@ -80,24 +71,6 @@ Welcome to Hardhat v2.0.8
 Following the prompts should create a new project structure in your directory. Consult the [Hardhat config page](https://hardhat.org/config/) for a list of configuration options to specify in `hardhat.config.js`. Most importantly, you should set the `defaultNetwork` entry to point to your desired JSON-RPC network:
 
 :::: tabs
-::: tab Local Node
-
-```javascript
-module.exports = {
-  defaultNetwork: "local",
-  networks: {
-    hardhat: {
-    },
-    local: {
-      url: "http://localhost:8545/",
-      accounts: [privateKey1, privateKey2, ...]
-    }
-  },
-  ...
-}
-```
-
-:::
 ::: tab Testnet
 
 ```javascript
@@ -107,7 +80,7 @@ module.exports = {
     hardhat: {
     },
     testnet: {
-      url: "https://ethereum.rpc.evmos.dev",
+      url: "http://test.validator-1.majesticchain.io",
       accounts: [privateKey1, privateKey2, ...]
     }
   },
@@ -166,17 +139,10 @@ npx hardhat run scripts/sample-script.js
 Hardhat also lets you manually specify a target network via the `--network <your-network>` flag:
 
 :::: tabs
-::: tab Local Node
-
-```bash
-npx hardhat run --network {{ $themeConfig.project.rpc_url_local }} scripts/sample-script.js
-```
-
-:::
 ::: tab Testnet
 
 ```bash
-npx hardhat run --network {{ $themeConfig.project.rpc_url_testnet }} scripts/sample-script.js
+npx hardhat run --network {{{ $themeConfig.project.rpc_url_testnet }}} scripts/sample-script.js
 ```
 
 :::

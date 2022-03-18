@@ -4,7 +4,7 @@ order: 4
 
 # JSON-RPC Methods
 
-Check the JSON-RPC methods supported on Evmos. {synopsis}
+Check the JSON-RPC methods supported on Majestic StarChain. {synopsis}
 
 ## Pre-requisite Readings
 
@@ -165,44 +165,6 @@ Block Number can be entered as a Hex string, `"earliest"`, `"latest"` or `"pendi
 Below is a list of the RPC methods, the parameters and an example response from the namespaces.
 
 ## Web3 Methods
-
-### `web3_clientVersion`
-
-Get the web3 client version.
-
-#### Parameters (0)
-
-#### Result
-
-```json
-{ "jsonrpc": "2.0", "id": 1, "result": "Evmos/0.1.3+/linux/go1.17" }
-```
-
-#### Client Examples
-
-:::: tabs
-::: tab Shell HTTP
-
-```shell
-curl -X POST -H "Content-Type: application/json" http://localhost:8545 --data '{"jsonrpc": "2.0", "id": 42, "method": "web3_clientVersion", "params": []}'
-```
-
-:::
-::: tab Shell WebSocket
-
-```shell
-wscat -c ws://localhost:8546 -x '{"jsonrpc": "2.0", "id": 1, "method": "web3_clientVersion", "params": []}'
-```
-
-:::
-::: tab Javascript Console
-
-```javascript
-web3.clientVersion();
-```
-
-:::
-::::
 
 ### `web3_sha3`
 

@@ -1,6 +1,6 @@
 module.exports = {
   theme: "cosmos",
-  title: "Evmos Documentation",
+  title: "Majestic StarChain Documentation",
   locales: {
     "/": {
       lang: "en-US",
@@ -56,37 +56,31 @@ module.exports = {
     // ['link', { rel: "apple-touch-icon-precomposed", href: "/apple-touch-icon-precomposed.png" }],
   ],
   themeConfig: {
-    repo: "tharsis/evmos",
-    docsRepo: "tharsis/evmos",
+    repo: "majesticchain/majestic-star-chain",
+    docsRepo: "majesticchain/majestic-star-chain",
     docsBranch: "main",
     docsDir: "docs",
     editLinks: true,
     custom: true,
     project: {
-      name: "Evmos",
-      denom: "Evmos",
-      ticker: "EVMOS",
+      name: "Majestic StarChain",
+      denom: "MJT",
+      ticker: "MJT",
       binary: "mjtd",
-      testnet_denom: "Mjt",
+      testnet_denom: "MJT",
       testnet_ticker: "MJT",
       rpc_url: "http://localhost:8545/",
-      rpc_url_testnet: "https://ethereum.rpc.evmos.dev",
+      rpc_url_testnet: "http://test.validator-1.majesticchain.io",
       rpc_url_local: "http://localhost:8545/",
-      chain_id: "9001",
-      testnet_chain_id: "9000",
+      chain_id: "2137",
+      testnet_chain_id: "2138",
       latest_version: "v0.4.0",
       version_number: "1",
-      testnet_version_number: "2",
-      block_explorer_url: "https://evm.evmos.org",
-      cosmos_block_explorer_url: "https://explorer.evmos.org",
+      testnet_version_number: "1",
+      block_explorer_url: "http://scan.majesticchain.io/",
     },
     logo: {
-      src: "/evmos-black.svg",
-    },
-    algolia: {
-      id: "BH4D9OD16A",
-      key: "a5d55fe5f540cc3bd28fa2c72f2b5bd8",
-      index: "evmos",
+      src: "/majestic-star-chain.svg",
     },
     topbar: {
       banner: false,
@@ -101,11 +95,6 @@ module.exports = {
               title: "Introduction",
               directory: true,
               path: "/intro",
-            },
-            {
-              title: "Quick Start",
-              directory: true,
-              path: "/quickstart",
             },
             {
               title: "Basics",
@@ -123,14 +112,9 @@ module.exports = {
           title: "Guides",
           children: [
             {
-              title: "Localnet",
+              title: "Wallet",
               directory: true,
-              path: "/guides/localnet",
-            },
-            {
-              title: "Keys and Wallets",
-              directory: true,
-              path: "/guides/keys-wallets",
+              path: "/guides/wallet",
             },
             {
               title: "Ethereum Tooling",
@@ -141,11 +125,6 @@ module.exports = {
               title: "Validators",
               directory: true,
               path: "/guides/validators",
-            },
-            {
-              title: "Upgrades",
-              directory: true,
-              path: "/guides/upgrades",
             },
             {
               title: "Key Management System",
@@ -162,41 +141,6 @@ module.exports = {
               directory: true,
               path: "/api/json-rpc",
             },
-            {
-              title: "Protobuf Reference",
-              directory: false,
-              path: "/api/proto-docs",
-            },
-          ],
-        },
-        {
-          title: "Testnet",
-          children: [
-            {
-              title: "Join Testnet",
-              directory: false,
-              path: "/testnet/join",
-            },
-            {
-              title: "Token Faucet",
-              directory: false,
-              path: "/testnet/faucet",
-            },
-            {
-              title: "Deploy Node on Cloud",
-              directory: false,
-              path: "/testnet/cloud_providers",
-            },
-          ],
-        },
-        {
-          title: "Specifications",
-          children: [
-            {
-              title: "Modules",
-              directory: true,
-              path: "/modules",
-            },
           ],
         },
         {
@@ -206,23 +150,11 @@ module.exports = {
               title: "Block Explorers",
               path: "/tools/explorers",
             },
-            {
-              title: "Evmos (EVM)",
-              path: "https://evm.evmos.org",
-            },
-            {
-              title: "Evmos (Cosmos)",
-              path: "https://explorer.evmos.org",
-            },
           ],
         },
         {
           title: "Resources",
           children: [
-            {
-              title: "Evmos API Reference",
-              path: "https://pkg.go.dev/github.com/majesticchain/majestic-star-chain",
-            },
             {
               title: "Ethermint Library API Reference",
               path: "https://pkg.go.dev/github.com/tharsis/ethermint",
@@ -235,56 +167,13 @@ module.exports = {
         },
       ],
     },
-    gutter: {
-      title: "Help & Support",
-      chat: {
-        title: "Developer Chat",
-        text: "Chat with Evmos developers on Discord.",
-        url: "https://discord.gg/trje9XuAmy",
-        bg: "linear-gradient(103.75deg, #1B1E36 0%, #22253F 100%)",
-      },
-      forum: {
-        title: "Evmos Developer Forum",
-        text: "Join the Evmos Developer Forum to learn more.",
-        url: "https://forum.cosmos.network/c/ethermint",
-        bg: "linear-gradient(221.79deg, #3D6B99 -1.08%, #336699 95.88%)",
-        logo: "ethereum-white",
-      },
-      github: {
-        title: "Found an Issue?",
-        text: "Help us improve this page by suggesting edits on GitHub.",
-        bg: "#F8F9FC",
-      },
-    },
     footer: {
-      logo: "/evmos-black.svg",
+      logo: "/majestic-star-chain.svg",
       textLink: {
-        text: "evmos.org",
-        url: "https://evmos.org",
+        text: "majesticswap.io",
+        url: "https://www.majesticswap.io/",
       },
-      services: [
-        {
-          service: "github",
-          url: "https://github.com/majesticchain/majestic-star-chain",
-        },
-        {
-          service: "twitter",
-          url: "https://twitter.com/EvmosOrg",
-        },
-        {
-          service: "telegram",
-          url: "https://t.me/EvmosOrg",
-        },
-        {
-          service: "linkedin",
-          url: "https://www.linkedin.com/company/tharsis-finance/",
-        },
-        {
-          service: "medium",
-          url: "https://evmos.blog/",
-        },
-      ],
-      smallprint: "This website is maintained by Tharsis Labs Ltd.",
+      smallprint: "This website is maintained by Majestic Coin Ltd.",
       links: [
         {
           title: "Documentation",
@@ -300,28 +189,6 @@ module.exports = {
             {
               title: "Tendermint Core Docs",
               url: "https://docs.tendermint.com",
-            },
-          ],
-        },
-        {
-          title: "Community",
-          children: [
-            {
-              title: "Evmos Community",
-              url: "https://discord.gg/trje9XuAmy",
-            },
-            {
-              title: "Evmos Forum",
-              url: "https://forum.cosmos.network/c/ethermint",
-            },
-          ],
-        },
-        {
-          title: "Tharsis",
-          children: [
-            {
-              title: "Jobs at Tharsis",
-              url: "https://tharsis.notion.site/",
             },
           ],
         },

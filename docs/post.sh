@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
-
-# Modules
-rm -rf modules
+##!/usr/bin/env bash
+#
+## Modules
+#rm -rf modules
