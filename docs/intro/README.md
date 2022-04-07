@@ -8,14 +8,13 @@ parent:
 
 This folder contains introduction material for Majestic StarChain.
 
-1. [Overview](./overview)
-1. [Architecture](./architecture)
-1. [Clients](./clients)
-1. [Use Cases](./use_cases)
-1. [Resources](./resources)
+1. [Overview](./overview.md)
+1. [Architecture](./architecture.md)
+1. [Clients](./clients.md)
+1. [Use Cases](./use_cases.md)
 
-After reading the introduction material, head over to the [basics](../basics/README) to learn more.
+After reading the introduction material, head over to the [basics](../basics/README.md) to learn more.
 
 ## Next {hide}
 
-Get an high-level [overview](./overview) of Majestic StarChain {hide}
+Get an high-level [overview](./overview.md) of Majestic StarChain {hide}
