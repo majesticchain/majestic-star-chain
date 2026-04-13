@@ -1,6 +1,6 @@
 module github.com/majesticchain/majestic-star-chain
 
-go 1.17
+go 1.23
 
 require (
 	contrib.go.opencensus.io/exporter/prometheus v0.4.0
@@ -21,7 +21,7 @@ require (
 	go.opencensus.io v0.23.0
 	google.golang.org/genproto v0.0.0-20211223182754-3ac035c7e7cb
 	google.golang.org/grpc v1.43.0
-	google.golang.org/protobuf v1.27.1
+	google.golang.org/protobuf v1.36.11
 )
 
 require (
